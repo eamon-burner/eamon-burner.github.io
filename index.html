@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="pico-main/css/pico.min.css">
-    <title>Top Navigation Menu</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1.5.10/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <title>Audio in Nav</title>
   </head>
   <body>
     <header class="container">
@@ -16,8 +17,19 @@
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/radar/">Radar</a></li>
+          <li>
+            <audio id="audio-player" controls>
+              <source src="path/to/your-audio.mp3" type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+          </li>
         </ul>
       </nav>
     </header>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+      const player = new Plyr('#audio-player');
+    </script>
   </body>
 </html>
